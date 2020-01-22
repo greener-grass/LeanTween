@@ -429,7 +429,13 @@ public class LeanTween : MonoBehaviour {
                 if (tween.id == tweensFinishedIds[i]){
                     //              Debug.Log("removing tween:"+tween);
 
-                    if (tween.hasExtraOnCompletes && tween.trans != null)
+                    if (tween.trans == null)
+                    {
+                        if (tween._optional.onDestroyed != null) {
+                            tween._optional.onDestroyed();
+                        }
+                        removeTween(j);
+                    } else if (tween.hasExtraOnCompletes)
                     {
                         var onComplete = tween._optional.onComplete;
                         var param = tween._optional.onCompleteParam;

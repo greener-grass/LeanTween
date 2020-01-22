@@ -1988,6 +1988,11 @@ public class LTDescr
 		return this;
 	}
 
+	public LTDescr setOnDestroyed(Action onDestroyed)
+	{
+		this._optional.onDestroyed = onDestroyed;
+		return this;
+	}
 
 	/**
 	* Have a method called on each frame that the tween is being animated (passes a float value)

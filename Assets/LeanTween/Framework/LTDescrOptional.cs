@@ -32,7 +32,7 @@ public class LTDescrOptional  {
 	public object onCompleteParam { get; set; }
 	public object onUpdateParam { get; set; }
 	public Action onStart { get; set; }
-
+	public Action onDestroyed { get; set; }
 
 //	#if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_0_1 && !UNITY_4_1 && !UNITY_4_2
 //	public SpriteRenderer spriteRen { get; set; }
@@ -63,6 +63,7 @@ public class LTDescrOptional  {
 		this.onCompleteObject = null;
 		this.onCompleteParam = null;
 		this.onStart = null;
+		this.onDestroyed = null;
 
 		this.point = Vector3.zero;
 		this.initFrameCount = 0;
